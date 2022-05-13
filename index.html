@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://css.gg/css?=add.css" rel="stylesheet" />
+    <title>Image Processing</title>
+  </head>
+  <body>
+    <main>
+      <div class="btn-container">
+        <div class="subbtn">
+          <button class="btn first">Pixel Processing</button>
+          <div class="subbtn-group first">
+            <button class="btn first" id="button-grayscale">
+              Grayscale
+            </button>
+            <button class="btn" id="button-negative">Negative</button>
+            <div class="subsubbtn">
+              <button class="btn">Gamma correction</button>
+              <div class="subsubbtn-group">
+                <p class="txt first" id="gamma-value">𝛾 = 1.00</p>
+                <input
+                  type="range"
+                  id="slider-gamma"
+                  class="sldr"
+                  min="0.01"
+                  max="9.99"
+                  step="0.01"
+                  value="1.00"
+                />
+                <button class="btn last" id="button-gamma-apply">
+                  Apply
+                </button>
+              </div>
+            </div>
+            <div class="subsubbtn">
+              <button class="btn">Color balance</button>
+              <div class="subsubbtn-group">
+                <p class="txt first" id="red-value">Red: 0%</p>
+                <input
+                  type="range"
+                  id="slider-color-red"
+                  class="sldr"
+                  min="-2"
+                  max="2"
+                  value="0"
+                  step="0.01"
+                />
+                <p class="txt" id="green-value">Green: 0%</p>
+                <input
+                  type="range"
+                  id="slider-color-green"
+                  class="sldr"
+                  min="-2"
+                  max="2"
+                  value="0"
+                  step="0.01"
+                />
+                <p class="txt" id="blue-value">Blue: 0%</p>
+                <input
+                  type="range"
+                  id="slider-color-blue"
+                  class="sldr sldr"
+                  min="-2"
+                  max="2"
+                  value="0"
+                  step="0.01"
+                />
+                <button class="btn last" id="button-color-apply">
+                  Apply
+                </button>
+              </div>
+            </div>
+            <div class="subsubbtn">
+              <button class="btn">Threshold</button>
+              <div class="subsubbtn-group">
+                <p class="txt first" id="threshold-value">
+                  Threshold level: 128
+                </p>
+                <input
+                  type="range"
+                  id="slider-threshold"
+                  class="sldr"
+                  min="1"
+                  max="255"
+                  value="128"
+                />
+                <button class="btn last" id="button-threshold-apply">
+                  Apply
+                </button>
+              </div>
+            </div>
+            <div class="subsubbtn">
+              <button class="btn last">Image part</button>
+              <div class="subsubbtn-group">
+                <input type="number" class="input first" id="image-part-x1" placeholder="x1: 0px">
+                <input type="number" class="input" id="image-part-y1" placeholder="y1: 0px">
+                <input type="number" class="input" id="image-part-x2" placeholder="x2: 0px">
+                <input type="number" class="input last" id="image-part-y2" placeholder="y2: 0px">
+                <button class="btn last" id="button-part-apply">
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subbtn">
+          <button class="btn">Kernel Processing</button>
+          <div class="subbtn-group">
+            <button class="btn first" id="button-box-blur">Box blur</button>
+            <button class="btn" id="button-gaussian-blur">Gaussian blur</button>
+            <button class="btn" id="button-sharpen">Sharpen</button>
+            <button class="btn" id="button-sobel-operator">
+              Sobel operator
+            </button>
+            <button class="btn last" id="button-laplacian-operator">
+              Laplacian operator
+            </button>
+          </div>
+        </div>
+        <div class="subbtn">
+          <button class="btn">Filters</button>
+          <div class="subbtn-group">
+            <button class="btn first" id="button-median-filter">
+              Median filter
+            </button>
+            <label class="file-upload last" id="merge-uploader">
+              <input type="file" accept="image/*" id="merge-upload"/>
+              <p class="file-upload-txt">Merge</p>
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-reset last" id="button-reset">Reset</button>
+      </div>
+      <div class="canvas-container">
+        <canvas id="canvas" class="hidden"></canvas>
+        <input type="file" id="" />
+        <label class="file-upload" id="file-uploader">
+          <input type="file" accept="image/*" id="file-upload" />
+          <i class="gg-add"></i>
+          <p class="file-upload-txt">Add your image</p>
+        </label>
+      </div>
+    
+        <canvas id="rdec" style="size: 200in"></canvas>
+      
+      <div>
+
+      </div>
+    </main>
+    <script src="js/kernel.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/filtri.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/gubmi.js"></script>
+    <script src="js/matrix.js"></script>
+  </body>
+</html>
