@@ -1,2 +1,1 @@
-# demo "fotošop"
-//histogram še ni narejen
+procesiranje slike v brskalniku
